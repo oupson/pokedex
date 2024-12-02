@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag pokeapi:0.1
+      run: docker build pokeapi --file pokeapi/Dockerfile --tag pokeapi:0.1
