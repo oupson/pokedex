@@ -14,7 +14,7 @@ spec:
         app: pokedex-kanto
     spec:
       containers:
-      - image: pokeapi:0.1
+      - image: ghcr.io/froissant/pokedex:main
         name: pokedex-kanto
         ports:
         - containerPort: 3000

@@ -14,7 +14,7 @@ spec:
         app: pokedex-johto
     spec:
       containers:
-      - image: pokeapi:0.1
+      - image: ghcr.io/froissant/pokedex:main
         name: pokedex-johto
         ports:
         - containerPort: 3000
