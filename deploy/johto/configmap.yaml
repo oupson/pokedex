@@ -4,5 +4,5 @@ metadata:
   name: pokedex-johto-cm
 data:
   POKEDEX_NAME: "Johto"
-  POKEDEX_START_NUMBER: 152
-  POKEDEX_END_NUMBER: 251
+  POKEDEX_START_NUMBER: "152"
+  POKEDEX_END_NUMBER: "251"
