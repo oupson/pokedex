@@ -18,6 +18,15 @@ spec:
         name: pokedex-kanto
         ports:
         - containerPort: 3000
+          name: http
         envFrom:
           - configMapRef:
               name: pokedex-kanto-cm
+        livenessProbe:
+          httpGet:
+            path: /
+            port: http
+        readinessProbe:
+          httpGet:
+            path: /
+            port: http
