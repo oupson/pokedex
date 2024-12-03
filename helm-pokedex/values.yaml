@@ -121,3 +121,8 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+envVariables:
+  POKEDEX_NAME: DEFAULT_NAME
+  POKEDEX_START_NUMBER: 1
+  POKEDEX_END_NUMBER: 151
