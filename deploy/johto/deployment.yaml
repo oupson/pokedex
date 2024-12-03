@@ -20,4 +20,4 @@ spec:
         - containerPort: 3000
         envFrom:
           - configMapRef:
-              name: pokemon-johto-cm
+              name: pokedex-johto-cm
