@@ -27,6 +27,6 @@ readinessProbe:
     port: http
 
 envVariables:
-  POKEDEX_NAME: Johto
-  POKEDEX_START_NUMBER: "152"
-  POKEDEX_END_NUMBER: "251"
+  POKEDEX_NAME: Kanto
+  POKEDEX_START_NUMBER: "1"
+  POKEDEX_END_NUMBER: "151"
