@@ -60,4 +60,11 @@ jobs:
           subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME}}
           subject-digest: ${{ steps.push.outputs.digest }}
           push-to-registry: true
-      
+
+      - name: Install Kustomize
+        # You may pin to the exact commit or the version.
+        # uses: syntaqx/setup-kustomize@4331ea02eec887906c9adbf7f431ca3db09908fd
+        uses: syntaqx/setup-kustomize@v1
+
+      - name: Edit manifests
+        run: cd deploy/johto && kustomize edit set image ghcr.io/froissant/pokedex:main=${{ steps.meta.outputs.tags[0] }}
