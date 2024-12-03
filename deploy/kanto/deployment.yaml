@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pokedex-kanto
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: pokedex-kanto
+  template:
+    metadata:
+      labels:
+        app: pokedex-kanto
+    spec:
+      containers:
+      - image: pokeapi:0.1
+        name: pokedex-kanto
+        ports:
+        - containerPort: 80
+        envFrom:
+          - configMapRef:
+            name: pokemon-kanto-cm
