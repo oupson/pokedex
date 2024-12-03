@@ -17,7 +17,7 @@ spec:
       - image: pokeapi:0.1
         name: pokedex-johto
         ports:
-        - containerPort: 80
+        - containerPort: 3000
         envFrom:
           - configMapRef:
               name: pokemon-johto-cm
