@@ -1,6 +1,6 @@
-projectKey=froissant-pokedex
+projectKey=oupson-pokedex
 serverUrl=http://20.19.196.77:9000
 serverVersion=24.12.0.100206
-dashboardUrl=http://20.19.196.77:9000/dashboard?id=froissant-pokedex
-ceTaskId=d0fcba91-31b1-44b5-b033-6613f58d20d1
-ceTaskUrl=http://20.19.196.77:9000/api/ce/task?id=d0fcba91-31b1-44b5-b033-6613f58d20d1
+dashboardUrl=http://20.19.196.77:9000/dashboard?id=oupson-pokedex
+ceTaskId=7ac61771-14b3-43d2-8b76-00f5e649ec9b
+ceTaskUrl=http://20.19.196.77:9000/api/ce/task?id=7ac61771-14b3-43d2-8b76-00f5e649ec9b
