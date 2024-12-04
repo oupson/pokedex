@@ -4,6 +4,6 @@ WORKDIR /app
 
 COPY . .
 
-RUN npm i
+RUN npm i --ignore-scripts
 
 CMD ["npm", "start"]
