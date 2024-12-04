@@ -64,24 +64,6 @@ jobs:
           subject-digest: ${{ steps.push.outputs.digest }}
           push-to-registry: true
 
-      - name: Setup variables
-        id: output_variables
-        env:
-          DOCKER_METADATA: ${{ steps.docker_meta.outputs.json}}
-        run: |
-          # get the image tag that contains 'sha-'
-          image_tag=$(echo "$DOCKER_METADATA_OUTPUT_JSON" | jq -r '.tags[] | select(. | test("sha-"))')
-          echo $image_tag
-          echo "image_tag=$image_tag" >> $GITHUB_OUTPUT 
-
-      - name: Install Kustomize
-        # You may pin to the exact commit or the version.
-        # uses: syntaqx/setup-kustomize@4331ea02eec887906c9adbf7f431ca3db09908fd
-        uses: syntaqx/setup-kustomize@v1
-
-      - name: Edit manifest for Johto
-        run: cd deploy/johto && kustomize edit set image ghcr.io/froissant/pokedex:main=${{ steps.output_variables.outputs.image_tag }}
-
       - name: Edit manifest for Kanto
         run: cd deploy/kanto && kustomize edit set image ghcr.io/froissant/pokedex:main=${{ steps.output_variables.outputs.image_tag }}
 
