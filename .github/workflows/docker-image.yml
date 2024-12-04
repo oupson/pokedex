@@ -5,6 +5,8 @@ name: Create and publish a Docker image
 on:
   push:
     branches: ['main']
+    paths:
+      - pokeapi/**
 
 # Defines two custom environment variables for the workflow. These are used for the Container registry domain, and a name for the Docker image that this workflow builds.
 env:
@@ -66,5 +68,10 @@ jobs:
         # uses: syntaqx/setup-kustomize@4331ea02eec887906c9adbf7f431ca3db09908fd
         uses: syntaqx/setup-kustomize@v1
 
-      - name: Edit manifests
+      - name: Edit manifest for Johto
         run: cd deploy/johto && kustomize edit set image ghcr.io/froissant/pokedex:main=${{ steps.meta.outputs.tags[0] }}
+
+      - name: Edit manifest for Kanto
+        run: cd deploy/kanto && kustomize edit set image ghcr.io/froissant/pokedex:main=${{ steps.meta.outputs.tags[0] }}
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
