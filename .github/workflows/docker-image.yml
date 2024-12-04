@@ -63,10 +63,3 @@ jobs:
           subject-name: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME}}
           subject-digest: ${{ steps.push.outputs.digest }}
           push-to-registry: true
-
-      - name: Edit manifest for Kanto
-        run: cd deploy/kanto && kustomize edit set image ghcr.io/froissant/pokedex:main=${{ steps.output_variables.outputs.image_tag }}
-
-      - uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: Deploy new version ${{ steps.output_variables.outputs.image_tag }}
