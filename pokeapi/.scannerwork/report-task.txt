@@ -2,5 +2,5 @@ projectKey=froissant-pokedex
 serverUrl=http://20.19.196.77:9000
 serverVersion=24.12.0.100206
 dashboardUrl=http://20.19.196.77:9000/dashboard?id=froissant-pokedex
-ceTaskId=39f99faf-2c86-4dcb-9480-4e65df07a66b
-ceTaskUrl=http://20.19.196.77:9000/api/ce/task?id=39f99faf-2c86-4dcb-9480-4e65df07a66b
+ceTaskId=bfa24086-c1d3-4959-ac79-2c8fe997675e
+ceTaskUrl=http://20.19.196.77:9000/api/ce/task?id=bfa24086-c1d3-4959-ac79-2c8fe997675e

@@ -8,4 +8,4 @@ resources:
 images:
 - name: ghcr.io/froissant/pokedex:main
   newName: ghcr.io/froissant/pokedex
-  newTag: sha-3a06745
+  newTag: sha-57fa59b
