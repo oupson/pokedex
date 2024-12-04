@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     # Sets the permissions granted to the `GITHUB_TOKEN` for the actions in this job.
     permissions:
-      contents: read
+      contents: write
       packages: write
       attestations: write
       id-token: write
@@ -76,3 +76,5 @@ jobs:
         run: cd deploy/kanto && kustomize edit set image ghcr.io/froissant/pokedex:main=${{ steps.meta.outputs.tags[0] }}
 
       - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Deploy new version ${{ steps.meta.outputs.tags[0] }}
