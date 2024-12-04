@@ -69,11 +69,8 @@ jobs:
         env:
           DOCKER_METADATA: ${{ steps.docker_meta.outputs.json}}
         run: |
-          # pretty print the metadata
-          echo $DOCKER_METADATA | jq '.'
-
           # get the image tag that contains 'sha-'
-          image_tag=$(echo "$DOCKER_METADATA" | jq -r '.tags[] | select(. | test("sha-"))')
+          image_tag=$(echo "$DOCKER_METADATA_OUTPUT_JSON" | jq -r '.tags[] | select(. | test("sha-"))')
           echo $image_tag
           echo "image_tag=$image_tag" >> $GITHUB_OUTPUT 
 
